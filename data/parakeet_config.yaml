@@ -1,0 +1,52 @@
+device: gpu
+microscope:
+  beam:
+    acceleration_voltage_spread: 8.0e-07
+    electrons_per_angstrom: <modify to desired dose, e.g. 50, 100, 1000>
+    energy: 300
+    energy_spread: 2.66e-06
+  detector:
+    dqe: true
+    nx: 5000
+    ny: 5000
+    origin:
+    - 0
+    - 0
+    pixel_size: 1
+  lens:
+    c_10: -20000
+    c_30: 2.7
+    c_c: 0
+    current_spread: 3.3e-07
+sample:
+  box:
+  - 5000
+  - 5000
+  - 1000
+  centre:
+  - 2500
+  - 2500
+  - 500
+  molecules: 
+    local:
+      - filename: <modify for each of the conformations to the corresponding pdb file>
+        instances: 300
+  shape:
+    cuboid:
+      length_x: 5000.0
+      length_y: 5000.0
+      length_z: 150.0
+    margin:
+    - 0
+    - 0
+    - 0
+    type: cuboid
+scan:
+  exposure_time: 1
+  mode: still
+  num_images: 1
+simulation:
+  ice: true
+  radiation_damage_model: false
+  sensitivity_coefficient: 0.022
+  slice_thickness: 5.0
